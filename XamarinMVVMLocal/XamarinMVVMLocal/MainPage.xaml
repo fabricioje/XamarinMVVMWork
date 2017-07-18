@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinMVVMLocal"
+             x:Class="XamarinMVVMLocal.MainPage">
+
+    <StackLayout>
+        <Entry Text="{Binding Texto}"/>
+        <Button Text="Pesquisar" Command="{Binding InserirDadosCommand}"/>
+        <ListView ItemsSource="{Binding Resultados}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Idade}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ir para segunda página" Command="{Binding NavegarCommand}"/>
+    </StackLayout>
+</ContentPage>
