@@ -35,7 +35,7 @@ namespace XamarinMVVMLocal.ViewModel
         public Command InserirDadosCommand { get; }
 
         //propriedade do Command do botão para navegar para a próxima tema
-        public Command NavegarCommand { get; }
+        public Command<Dados> NavegarCommand { get; }
 
         public MainViewModel()
         {
@@ -46,7 +46,7 @@ namespace XamarinMVVMLocal.ViewModel
             Resultados = new ObservableCollection<Dados>();
 
             //Inicializa o Command para fazer a navegação para próxima página
-            NavegarCommand = new Command(ExecuteNavegarCommand);
+            NavegarCommand = new Command<Dados>(ExecuteNavegarCommand);
         }
 
         //metódo para execultar o Command
@@ -73,9 +73,9 @@ namespace XamarinMVVMLocal.ViewModel
         }
 
         //metódo para o Command para navegação de tela
-        async void ExecuteNavegarCommand()
+        async void ExecuteNavegarCommand(Dados usuario)
         {
-            await NavegarTelaAsync<SegundaViewModel>();
+            await NavegarTelaAsync<SegundaViewModel>(usuario);
         }
 
     }

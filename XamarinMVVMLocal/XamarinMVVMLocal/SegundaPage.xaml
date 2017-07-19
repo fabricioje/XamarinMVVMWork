@@ -3,5 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinMVVMLocal.SegundaPage"
              Title="Segunda Página">
-    
+    <StackLayout>
+        <Label Text="{Binding Usuario.Nome}" TextColor="Black" BackgroundColor="LightGray" FontSize="Large" HorizontalTextAlignment="Center"/>
+        <Label Text="{Binding Usuario.Idade}" TextColor="Gray"/>
+        <Label Text="{Binding Usuario.Sexo}" TextColor="White" BackgroundColor="LightGray"/>
+
+        <ListView ItemsSource="Usuario">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Column="0" Text="fsda"/>
+                                
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Text="{Binding Usuario.Nome}"/>
+    </StackLayout>
 </ContentPage>

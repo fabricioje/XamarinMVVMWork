@@ -7,7 +7,7 @@
     <StackLayout>
         <Entry Text="{Binding Texto}"/>
         <Button Text="Pesquisar" Command="{Binding InserirDadosCommand}"/>
-        <ListView ItemsSource="{Binding Resultados}">
+        <ListView ItemsSource="{Binding Resultados}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Nome}" Detail="{Binding Idade}"/>
